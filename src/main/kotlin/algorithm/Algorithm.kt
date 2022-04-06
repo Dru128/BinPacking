@@ -2,6 +2,8 @@ package algorithm
 
 import Container
 import Item
+import java.lang.StrictMath.pow
+import kotlin.math.sqrt
 
 
 abstract class Algorithm(
@@ -61,4 +63,11 @@ abstract class Algorithm(
         if (isBigToSmall) objects.reverse()
     }
 
+    fun clearEmptyContainers()
+    {
+        var solution = arrayOf<Container>()
+        for (i in containers)
+            if (i.objects.isNotEmpty()) solution += i
+        containers = solution
+    }
 }

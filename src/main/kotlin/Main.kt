@@ -9,26 +9,27 @@ fun main()
 {
     val speedometerAlgorithm = SpeedometerAlgorithm()
     val data = DataManager()
-    val objFile = File("src/main/resources/objects")
-//    val objFile = File("src/main/resources/objects_short")
+    val objFile = File("src/main/resources/objects_long")
 
-//    data.generateObjects(20, 10..150, objFile)
+/*
+    data.generateObjects(5000, 10..65, objFile)
+*/
     val objects: Array<Item> = data.getObjects(objFile) // предметы
     val containers: Array<Container> =
         arrayOf( Container(Configuration.PLACE_CONT, Configuration.WEIGHT_CONT) ) // контейнеры
 
-//    val algorithm = algorithm.Enumeration(objects, containers)
-//    val algorithm = algorithm.FirstFit(objects, containers, true)
-    val algorithm = algorithm.BestFit(objects, containers, true)
+    val algorithm = algorithm.FirstFit(objects, containers, false)
 //    val algorithm = algorithm.BruteForce(objects, containers)
-//    val algorithm = algorithm.NextFit(objects, containers)
-//    val algorithm = algorithm.WorstFit(objects, containers)
+//    val algorithm = algorithm.NextFit(objects, containers, null)
+//    val algorithm = algorithm.AlmostWorstFit(objects, containers, null)
+//    val algorithm = algorithm.WorstFit(objects, containers, null)
+//    val algorithm = algorithm.BestFit(objects, containers, true)
 
     speedometerAlgorithm.start()
     var solution = algorithm.start()
-    algorithm.showContainers()
-    println(speedometerAlgorithm.finish())
 
 //    algorithm.containers = ItemsToConts().convertItemsToConts(solution)!!
-//    algorithm.showContainers()
+    algorithm.showContainers()
+
+    println("work time = " + speedometerAlgorithm.finish())
 }

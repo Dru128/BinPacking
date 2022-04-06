@@ -31,9 +31,9 @@ class FirstFit(
 
             containers[action.num].objects.add(obj)
             obj.cont = containers[action.num]
-
         }
 
+        clearEmptyContainers()
         val rate: Float = calcSolutionRate()
         if (rate < bestSolutionRate)
             saveSolution(rate)

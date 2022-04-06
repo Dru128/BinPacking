@@ -17,7 +17,7 @@ class DataManager
     fun generateObjects(n: Int, rage: IntRange, file: File)
     {
         file.writeText("")
-        val objArray = Array<Item>(n) { Item(rage.random().toFloat()) }
+        val objArray = Array<Item>(n) { i-> if (i < n/2) Item(rage.random().toFloat())else Item((20..50).random().toFloat()) }
         file.appendText(
             Json.encodeToString(objArray)
         )

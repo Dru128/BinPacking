@@ -21,6 +21,7 @@ class BruteForce(
 //        println("*".repeat(80))
 //        println("Best solution rate: $bestSolutionRate")
 //        println("*".repeat(80))
+        clearEmptyContainers()
         return bestSolutionItems
     }
 

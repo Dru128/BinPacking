@@ -32,6 +32,7 @@ class NextFit(
             obj.cont = containers[action.num]
         }
 
+        clearEmptyContainers()
         val rate: Float = calcSolutionRate()
         if (rate < bestSolutionRate)
             saveSolution(rate)

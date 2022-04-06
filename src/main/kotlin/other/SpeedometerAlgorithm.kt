@@ -9,7 +9,7 @@ class SpeedometerAlgorithm
         startTime = getCurTime()
     }
 
-    fun finish() = (getCurTime() - startTime).toDouble() / 1000 // second
+    fun finish() = getCurTime() - startTime
 
     private fun getCurTime() = System.currentTimeMillis()
 }

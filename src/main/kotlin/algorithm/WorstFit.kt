@@ -33,7 +33,7 @@ class WorstFit(
             }
         }
 
-//        showContainers()
+        clearEmptyContainers()
         val rate: Float = calcSolutionRate()
         if (rate < bestSolutionRate)
             saveSolution(rate)
